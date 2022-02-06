@@ -33,7 +33,6 @@ namespace APICatalogo
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
             //string mySqlConnectionString = Configuration.GetConnectionString("DefaultConnection");
-
             //services.AddDbContextPool<AppDbContext>(options =>
             //    options.UseMySql(mySqlConnectionString,
             //        ServerVersion.AutoDetect(mySqlConnectionString)));
