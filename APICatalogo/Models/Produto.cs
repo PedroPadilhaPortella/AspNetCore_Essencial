@@ -19,8 +19,10 @@ namespace APICatalogo.Models
         public decimal Preco { get; set; }
         [Required]
         [MaxLength(200)]
-        public string ImageUrl { get; set; }
+        public string ImagemUrl { get; set; }
         public float Estoque { get; set; }
         public DateTime DataCadastro { get; set; }
+        public Categoria Categoria { get; set; }
+        public int CategoriaId { get; set; }
     }
 }

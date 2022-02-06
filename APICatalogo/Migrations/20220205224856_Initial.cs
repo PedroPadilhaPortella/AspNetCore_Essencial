@@ -31,10 +31,10 @@ namespace APICatalogo.Migrations
                     Nome = table.Column<string>(maxLength: 80, nullable: false),
                     Descricao = table.Column<string>(maxLength: 200, nullable: false),
                     Preco = table.Column<decimal>(nullable: false),
-                    ImageUrl = table.Column<string>(maxLength: 200, nullable: false),
+                    ImagemUrl = table.Column<string>(maxLength: 200, nullable: false),
                     Estoque = table.Column<float>(nullable: false),
                     DataCadastro = table.Column<DateTime>(nullable: false),
-                    CategoriaId = table.Column<int>(nullable: true)
+                    CategoriaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,7 +44,7 @@ namespace APICatalogo.Migrations
                         column: x => x.CategoriaId,
                         principalTable: "Categorias",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
