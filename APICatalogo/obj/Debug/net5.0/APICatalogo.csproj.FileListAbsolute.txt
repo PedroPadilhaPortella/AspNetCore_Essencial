@@ -39,3 +39,4 @@ C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.csproj.CopyComplete
