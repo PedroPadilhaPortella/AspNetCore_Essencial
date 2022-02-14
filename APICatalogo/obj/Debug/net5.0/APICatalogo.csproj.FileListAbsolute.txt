@@ -19,7 +19,6 @@ C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\staticwebassets\APICatalogo.StaticWebAssets.Manifest.cache
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\staticwebassets\APICatalogo.StaticWebAssets.xml
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\scopedcss\bundle\APICatalogo.styles.css
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.RazorTargetAssemblyInfo.cache
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.dll
