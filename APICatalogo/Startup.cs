@@ -1,4 +1,7 @@
 using APICatalogo.Context;
+using APICatalogo.Services.Extensions;
+using APICatalogo.Services.Filters;
+using APICatalogo.Services.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,13 +42,15 @@ namespace APICatalogo
 
             services.AddControllers().AddNewtonsoftJson(options => 
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            services.AddScoped<ApiLoggingFilter>();
             
             services.AddSwaggerGen(c =>
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APICatalogo", Version = "v1" }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -53,6 +58,13 @@ namespace APICatalogo
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "APICatalogo v1"));
             }
+
+            app.ConfigureExceptionHandler();
+
+            loggerFactory.AddProvider(new CustomLoggerProvider( new CustomLoggerProviderConfiguration
+            {
+                LogLevel = LogLevel.Information,
+            }));
 
             app.UseHttpsRedirection();
 

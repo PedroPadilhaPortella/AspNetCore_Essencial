@@ -1,8 +1,11 @@
 ﻿using APICatalogo.Context;
 using APICatalogo.Models;
+using APICatalogo.Services.Filters;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +18,18 @@ namespace APICatalogo.Controllers
     public class ProdutosController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
+        private readonly ILogger _logger;
 
-        public ProdutosController(AppDbContext context)
+        public ProdutosController(AppDbContext context, IConfiguration configuration, ILogger<ProdutosController> logger)
         {
-            this._context = context;
+            _context = context;
+            _configuration = configuration;
+            _logger = logger;
         }
-        
+
         [HttpGet]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Produto>> Get()
         {
             try
@@ -34,7 +42,8 @@ namespace APICatalogo.Controllers
             }
         }
 
-        [HttpGet("{id}", Name = "ObterProduto")]
+        [HttpGet("{id:int:min(1)}", Name = "ObterProduto")]
+        // [HttpGet("{valor:alpha:length(5)}")]
         public ActionResult<Produto> GetById(int id)
         {
             try
@@ -119,6 +128,15 @@ namespace APICatalogo.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao acessar dados do banco");
             }
+        }
+
+        [HttpGet("/autor")]
+        public ActionResult GetAutor()
+        {
+            string autor = _configuration["Metadata:Autor"];
+            _logger.LogInformation("-- GET /autor --");
+            _logger.LogInformation(autor);
+            return Ok(autor);
         }
     }
 }
