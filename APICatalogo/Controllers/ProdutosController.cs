@@ -1,5 +1,5 @@
-﻿using APICatalogo.Context;
-using APICatalogo.Models;
+﻿using APICatalogo.Models;
+using APICatalogo.Repository;
 using APICatalogo.Services.Filters;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,11 +17,12 @@ namespace APICatalogo.Controllers
     [Route("api/[Controller]")]
     public class ProdutosController : Controller
     {
-        private readonly AppDbContext _context;
+        //private readonly AppDbContext _context;
+        private IUnitOfWork _context;
         private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
 
-        public ProdutosController(AppDbContext context, IConfiguration configuration, ILogger<ProdutosController> logger)
+        public ProdutosController(IUnitOfWork context, IConfiguration configuration, ILogger<ProdutosController> logger)
         {
             _context = context;
             _configuration = configuration;
@@ -34,7 +35,8 @@ namespace APICatalogo.Controllers
         {
             try
             {
-                return _context.Produtos.AsNoTracking().ToList();
+                //return _context.Produtos.AsNoTracking().ToList();
+                return _context.ProdutoRepository.GetAll().ToList();
             }
             catch (Exception)
             {
@@ -48,7 +50,8 @@ namespace APICatalogo.Controllers
         {
             try
             {
-                var produto = _context.Produtos.AsNoTracking().FirstOrDefault(p => p.Id.Equals(id));
+                //var produto = _context.Produtos.AsNoTracking().FirstOrDefault(p => p.Id.Equals(id));
+                var produto = _context.ProdutoRepository.GetById(p => p.Id.Equals(id));
 
                 if (produto == null)
                     return NotFound();
@@ -69,15 +72,18 @@ namespace APICatalogo.Controllers
                 //if(!ModelState.IsValid)
                 //    return BadRequest(ModelState);
 
-                Categoria categoria = _context.Categorias.FirstOrDefault(c => c.Id == produto.CategoriaId);
+                //Categoria categoria = _context.Categorias.FirstOrDefault(c => c.Id == produto.CategoriaId);
+                Categoria categoria = _context.CategoriaRepository.GetById(c => c.Id == produto.CategoriaId);
 
-                if(categoria == null)
+                if (categoria == null)
                     return NotFound();
 
                 produto.Categoria = categoria;
 
-                _context.Produtos.Add(produto);
-                _context.SaveChanges();
+                //_context.Produtos.Add(produto);
+                //_context.SaveChanges();
+                _context.ProdutoRepository.Add(produto);
+                _context.Commit();
 
                 return new CreatedAtRouteResult("ObterProduto", new { id = produto.Id }, produto);
             }
@@ -95,13 +101,17 @@ namespace APICatalogo.Controllers
                 if (id != produto.Id)
                     return BadRequest();
 
-                Categoria categoria = _context.Categorias.FirstOrDefault(c => c.Id == produto.CategoriaId);
+                //Categoria categoria = _context.Categorias.FirstOrDefault(c => c.Id == produto.CategoriaId);
+                Categoria categoria = _context.CategoriaRepository.GetById(c => c.Id == produto.CategoriaId);
 
                 if (categoria == null)
                     return NotFound();
 
-                _context.Entry(produto).State = EntityState.Modified;
-                _context.SaveChanges();
+                //_context.Entry(produto).State = EntityState.Modified;
+                //_context.SaveChanges();
+                _context.ProdutoRepository.Update(produto);
+                _context.Commit();
+
                 return Ok();
             }
             catch (Exception)
@@ -115,13 +125,17 @@ namespace APICatalogo.Controllers
         {
             try
             {
-                var produto = _context.Produtos.FirstOrDefault(p => p.Id == id);
+                //var produto = _context.Produtos.FirstOrDefault(p => p.Id == id);
+                var produto = _context.ProdutoRepository.GetById(p => p.Id == id);
 
                 if (produto == null)
                     return NotFound();
 
-                _context.Produtos.Remove(produto);
-                _context.SaveChanges();
+                //_context.Produtos.Remove(produto);
+                //_context.SaveChanges();
+                _context.ProdutoRepository.Delete(produto);
+                _context.Commit();
+
                 return produto;
             }
             catch (Exception)
@@ -137,6 +151,19 @@ namespace APICatalogo.Controllers
             _logger.LogInformation("-- GET /autor --");
             _logger.LogInformation(autor);
             return Ok(autor);
+        }
+
+        [HttpGet("price")]
+        public ActionResult<IEnumerable<Produto>> GetOrderByPrice()
+        {
+            try
+            {
+                return _context.ProdutoRepository.GetProductsByPrice().ToList();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao acessar dados do banco");
+            }
         }
     }
 }

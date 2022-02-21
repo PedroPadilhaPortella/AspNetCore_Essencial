@@ -1,4 +1,5 @@
 using APICatalogo.Context;
+using APICatalogo.Repository;
 using APICatalogo.Services.Extensions;
 using APICatalogo.Services.Filters;
 using APICatalogo.Services.Logging;
@@ -29,7 +30,6 @@ namespace APICatalogo
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options =>
@@ -43,13 +43,14 @@ namespace APICatalogo
             services.AddControllers().AddNewtonsoftJson(options => 
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             services.AddScoped<ApiLoggingFilter>();
             
             services.AddSwaggerGen(c =>
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APICatalogo", Version = "v1" }));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())

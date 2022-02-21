@@ -8,3 +8,37 @@ Information: 0 - ## OnActionExecuted ##
 Information: 0 - ## 22:44:53 ##
 Information: 0 - -- GET /autor --
 Information: 0 - Pedro Henrique Padilha Portella da Cruz
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 22:23:48 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 22:23:51 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 22:25:57 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 22:25:59 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 22:26:22 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 22:26:36 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 22:26:38 ##
