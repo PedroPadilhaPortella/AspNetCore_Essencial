@@ -1,8 +1,10 @@
 using APICatalogo.Context;
+using APICatalogo.DTO.Mapping;
 using APICatalogo.Repository;
 using APICatalogo.Services.Extensions;
 using APICatalogo.Services.Filters;
 using APICatalogo.Services.Logging;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -40,12 +42,17 @@ namespace APICatalogo
             //    options.UseMySql(mySqlConnectionString,
             //        ServerVersion.AutoDetect(mySqlConnectionString)));
 
-            services.AddControllers().AddNewtonsoftJson(options => 
+            services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<ApiLoggingFilter>();
+
+            // Registro do AutoMapper
+            var mappingConfig = new MapperConfiguration(mapper => mapper.AddProfile(new MappingProfile()));
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
             
             services.AddSwaggerGen(c =>
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APICatalogo", Version = "v1" }));

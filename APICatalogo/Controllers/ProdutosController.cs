@@ -1,6 +1,8 @@
-﻿using APICatalogo.Models;
+﻿using APICatalogo.DTO;
+using APICatalogo.Models;
 using APICatalogo.Repository;
 using APICatalogo.Services.Filters;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,22 +23,30 @@ namespace APICatalogo.Controllers
         private IUnitOfWork _context;
         private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
+        private readonly IMapper _mapper;
 
-        public ProdutosController(IUnitOfWork context, IConfiguration configuration, ILogger<ProdutosController> logger)
+        public ProdutosController(
+            IUnitOfWork context, 
+            IConfiguration configuration, 
+            ILogger<ProdutosController> logger,
+            IMapper mapper 
+        )
         {
             _context = context;
             _configuration = configuration;
             _logger = logger;
+            _mapper = mapper;
         }
 
         [HttpGet]
         [ServiceFilter(typeof(ApiLoggingFilter))]
-        public ActionResult<IEnumerable<Produto>> Get()
+        public ActionResult<IEnumerable<ProdutoDTO>> Get()
         {
             try
             {
                 //return _context.Produtos.AsNoTracking().ToList();
-                return _context.ProdutoRepository.GetAll().ToList();
+                var produtos = _context.ProdutoRepository.GetAll().ToList();
+                return _mapper.Map<List<ProdutoDTO>>(produtos);
             }
             catch (Exception)
             {
@@ -46,7 +56,7 @@ namespace APICatalogo.Controllers
 
         [HttpGet("{id:int:min(1)}", Name = "ObterProduto")]
         // [HttpGet("{valor:alpha:length(5)}")]
-        public ActionResult<Produto> GetById(int id)
+        public ActionResult<ProdutoDTO> GetById(int id)
         {
             try
             {
@@ -56,7 +66,7 @@ namespace APICatalogo.Controllers
                 if (produto == null)
                     return NotFound();
 
-                return produto;
+                return _mapper.Map<ProdutoDTO>(produto);
             }
             catch (Exception)
             {
@@ -65,12 +75,14 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Produto produto)
+        public ActionResult Post([FromBody] ProdutoDTO produtoDto)
         {
             try
             {
                 //if(!ModelState.IsValid)
                 //    return BadRequest(ModelState);
+
+                Produto produto = _mapper.Map<Produto>(produtoDto);
 
                 //Categoria categoria = _context.Categorias.FirstOrDefault(c => c.Id == produto.CategoriaId);
                 Categoria categoria = _context.CategoriaRepository.GetById(c => c.Id == produto.CategoriaId);
@@ -94,12 +106,14 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Produto produto)
+        public ActionResult Put(int id, [FromBody] ProdutoDTO produtoDto)
         {
             try
             {
-                if (id != produto.Id)
+                if (id != produtoDto.Id)
                     return BadRequest();
+
+                Produto produto = _mapper.Map<Produto>(produtoDto);
 
                 //Categoria categoria = _context.Categorias.FirstOrDefault(c => c.Id == produto.CategoriaId);
                 Categoria categoria = _context.CategoriaRepository.GetById(c => c.Id == produto.CategoriaId);
@@ -121,7 +135,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<Produto> Delete(int id)
+        public ActionResult<ProdutoDTO> Delete(int id)
         {
             try
             {
@@ -136,7 +150,7 @@ namespace APICatalogo.Controllers
                 _context.ProdutoRepository.Delete(produto);
                 _context.Commit();
 
-                return produto;
+                return _mapper.Map<ProdutoDTO>(produto);
             }
             catch (Exception)
             {
@@ -154,11 +168,11 @@ namespace APICatalogo.Controllers
         }
 
         [HttpGet("price")]
-        public ActionResult<IEnumerable<Produto>> GetOrderByPrice()
+        public ActionResult<IEnumerable<ProdutoDTO>> GetOrderByPrice()
         {
             try
             {
-                return _context.ProdutoRepository.GetProductsByPrice().ToList();
+                return _mapper.Map<List<ProdutoDTO>>(_context.ProdutoRepository.GetProductsByPrice().ToList());
             }
             catch (Exception)
             {
