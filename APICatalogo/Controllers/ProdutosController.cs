@@ -1,5 +1,6 @@
 ﻿using APICatalogo.DTO;
 using APICatalogo.Models;
+using APICatalogo.Pagination;
 using APICatalogo.Repository;
 using APICatalogo.Services.Filters;
 using AutoMapper;
@@ -8,10 +9,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace APICatalogo.Controllers
 {
@@ -40,12 +41,26 @@ namespace APICatalogo.Controllers
 
         [HttpGet]
         [ServiceFilter(typeof(ApiLoggingFilter))]
-        public ActionResult<IEnumerable<ProdutoDTO>> Get()
+        public ActionResult<IEnumerable<ProdutoDTO>> Get([FromQuery] ProdutosParameters parameters)
         {
             try
             {
                 //return _context.Produtos.AsNoTracking().ToList();
-                var produtos = _context.ProdutoRepository.GetAll().ToList();
+                //var produtos = _context.ProdutoRepository.GetAll().ToList();
+                var produtos = _context.ProdutoRepository.GetProducts(parameters);
+
+                var metadata = new
+                {
+                    produtos.TotalCount,
+                    produtos.PageSize,
+                    produtos.TotalPages,
+                    produtos.CurrentPage,
+                    produtos.HasNext,
+                    produtos.HasPrevious
+                };
+
+                Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
+
                 return _mapper.Map<List<ProdutoDTO>>(produtos);
             }
             catch (Exception)

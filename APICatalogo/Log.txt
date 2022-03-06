@@ -50,3 +50,132 @@ Information: 0 - ## 23:47:31 ##
 Information: 0 - ## ModelState: True ##
 Information: 0 - ## OnActionExecuted ##
 Information: 0 - ## 23:47:33 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 03:56:11 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 03:56:15 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 03:58:49 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 03:58:51 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 03:59:12 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 03:59:14 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 04:06:14 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 04:06:14 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 04:06:39 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 04:06:39 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 05:12:13 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 05:12:14 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 05:12:15 ##
+Error: 20102 - Failed executing DbCommand (143ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+ORDER BY `p`.`Nome`
+LIMIT @__p_1 OFFSET @__p_0
+Error: 10100 - An exception occurred while iterating over the results of a query for context type 'APICatalogo.Context.AppDbContext'.
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-2' at line 4
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-2' at line 4
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 51
+   at MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in /_/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 125
+   at MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 390
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 62
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySql.Data.MySqlClient/MySqlCommand.cs:line 210
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 05:12:16 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 05:12:22 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 05:12:22 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 05:12:27 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 05:12:27 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 05:12:54 ##
+Information: 0 - ## 05:12:54 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 05:12:57 ##
+Information: 0 - ## 05:12:57 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 05:13:01 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 05:13:01 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 05:13:17 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 05:13:17 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 05:13:21 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 05:13:21 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 02:45:55 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 02:45:57 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 02:57:59 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 02:57:59 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 02:58:25 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 02:58:25 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 03:10:56 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 03:10:57 ##
