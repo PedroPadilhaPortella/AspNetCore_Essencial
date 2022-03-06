@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace APICatalogo.Controllers
 {
@@ -41,13 +42,13 @@ namespace APICatalogo.Controllers
 
         [HttpGet]
         [ServiceFilter(typeof(ApiLoggingFilter))]
-        public ActionResult<IEnumerable<ProdutoDTO>> Get([FromQuery] ProdutosParameters parameters)
+        public async Task<ActionResult<IEnumerable<ProdutoDTO>>> Get([FromQuery] ProdutosParameters parameters)
         {
             try
             {
                 //return _context.Produtos.AsNoTracking().ToList();
                 //var produtos = _context.ProdutoRepository.GetAll().ToList();
-                var produtos = _context.ProdutoRepository.GetProducts(parameters);
+                var produtos = await _context.ProdutoRepository.GetProducts(parameters);
 
                 var metadata = new
                 {
@@ -71,12 +72,12 @@ namespace APICatalogo.Controllers
 
         [HttpGet("{id:int:min(1)}", Name = "ObterProduto")]
         // [HttpGet("{valor:alpha:length(5)}")]
-        public ActionResult<ProdutoDTO> GetById(int id)
+        public async Task<ActionResult<ProdutoDTO>> GetById(int id)
         {
             try
             {
                 //var produto = _context.Produtos.AsNoTracking().FirstOrDefault(p => p.Id.Equals(id));
-                var produto = _context.ProdutoRepository.GetById(p => p.Id.Equals(id));
+                var produto = await _context.ProdutoRepository.GetById(p => p.Id.Equals(id));
 
                 if (produto == null)
                     return NotFound();
@@ -90,7 +91,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] ProdutoDTO produtoDto)
+        public async Task<ActionResult> Post([FromBody] ProdutoDTO produtoDto)
         {
             try
             {
@@ -100,7 +101,7 @@ namespace APICatalogo.Controllers
                 Produto produto = _mapper.Map<Produto>(produtoDto);
 
                 //Categoria categoria = _context.Categorias.FirstOrDefault(c => c.Id == produto.CategoriaId);
-                Categoria categoria = _context.CategoriaRepository.GetById(c => c.Id == produto.CategoriaId);
+                Categoria categoria = await _context.CategoriaRepository.GetById(c => c.Id == produto.CategoriaId);
 
                 if (categoria == null)
                     return NotFound();
@@ -110,7 +111,7 @@ namespace APICatalogo.Controllers
                 //_context.Produtos.Add(produto);
                 //_context.SaveChanges();
                 _context.ProdutoRepository.Add(produto);
-                _context.Commit();
+                await _context.Commit();
 
                 return new CreatedAtRouteResult("ObterProduto", new { id = produto.Id }, produto);
             }
@@ -121,7 +122,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] ProdutoDTO produtoDto)
+        public async Task<ActionResult> Put(int id, [FromBody] ProdutoDTO produtoDto)
         {
             try
             {
@@ -131,7 +132,7 @@ namespace APICatalogo.Controllers
                 Produto produto = _mapper.Map<Produto>(produtoDto);
 
                 //Categoria categoria = _context.Categorias.FirstOrDefault(c => c.Id == produto.CategoriaId);
-                Categoria categoria = _context.CategoriaRepository.GetById(c => c.Id == produto.CategoriaId);
+                Categoria categoria = await _context.CategoriaRepository.GetById(c => c.Id == produto.CategoriaId);
 
                 if (categoria == null)
                     return NotFound();
@@ -139,7 +140,7 @@ namespace APICatalogo.Controllers
                 //_context.Entry(produto).State = EntityState.Modified;
                 //_context.SaveChanges();
                 _context.ProdutoRepository.Update(produto);
-                _context.Commit();
+                await _context.Commit();
 
                 return Ok();
             }
@@ -150,12 +151,12 @@ namespace APICatalogo.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<ProdutoDTO> Delete(int id)
+        public async Task<ActionResult<ProdutoDTO>> Delete(int id)
         {
             try
             {
                 //var produto = _context.Produtos.FirstOrDefault(p => p.Id == id);
-                var produto = _context.ProdutoRepository.GetById(p => p.Id == id);
+                var produto = await _context.ProdutoRepository.GetById(p => p.Id == id);
 
                 if (produto == null)
                     return NotFound();
@@ -163,7 +164,7 @@ namespace APICatalogo.Controllers
                 //_context.Produtos.Remove(produto);
                 //_context.SaveChanges();
                 _context.ProdutoRepository.Delete(produto);
-                _context.Commit();
+                await _context.Commit();
 
                 return _mapper.Map<ProdutoDTO>(produto);
             }
@@ -187,7 +188,7 @@ namespace APICatalogo.Controllers
         {
             try
             {
-                return _mapper.Map<List<ProdutoDTO>>(_context.ProdutoRepository.GetProductsByPrice().ToList());
+                return _mapper.Map<List<ProdutoDTO>>(_context.ProdutoRepository.GetProductsByPrice());
             }
             catch (Exception)
             {

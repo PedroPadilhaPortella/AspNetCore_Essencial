@@ -31,14 +31,14 @@ namespace APICatalogo.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<CategoriaDTO>> Get([FromQuery] CategoriasParameters parameters)
+        public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get([FromQuery] CategoriasParameters parameters)
         {
             try
             {
                 //return _context.Categorias.AsNoTracking().Include(c => c.Produtos).ToList();
                 //var categorias = _uof.CategoriaRepository.GetAll().ToList();
 
-                var categorias = _uof.CategoriaRepository.GetCategories(parameters);
+                var categorias = await _uof.CategoriaRepository.GetCategories(parameters);
 
                 var metadata = new
                 {
@@ -51,25 +51,23 @@ namespace APICatalogo.Controllers
                 };
 
                 Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
-
                 return _mapper.Map<List<CategoriaDTO>>(categorias);
             }
             catch (Exception)
             {
-
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao acessar dados do banco");
             }
         }
 
         [HttpGet("{id:int:min(1)}", Name = "ObterCategoria")]
-        public ActionResult<Categoria> GetById(int id)
+        public async Task<ActionResult<Categoria>> GetById(int id)
         {
             try
             {
-                Categoria categoria = _context.Categorias
+                Categoria categoria = await _context.Categorias
                 .AsNoTracking()
                 .Include(c => c.Produtos)
-                .FirstOrDefault(c => c.Id.Equals(id));
+                .FirstOrDefaultAsync(c => c.Id.Equals(id));
 
                 if (categoria == null)
                     return NotFound("Categoria não encontrada.");
@@ -83,12 +81,12 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Categoria categoria)
+        public async Task<ActionResult> Post([FromBody] Categoria categoria)
         {
             try
             {
                 _context.Categorias.Add(categoria);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return new CreatedAtRouteResult("ObterCategoria", new { id = categoria.Id }, categoria);
             }
             catch (Exception)
@@ -98,7 +96,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Categoria categoria)
+        public async Task<ActionResult> Put(int id, [FromBody] Categoria categoria)
         {
             try
             {
@@ -106,7 +104,7 @@ namespace APICatalogo.Controllers
                     return BadRequest("Id da Categoria não coincide.");
 
                 _context.Entry(categoria).State = EntityState.Modified;
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return Ok("Categoria atualizada com Sucesso.");
             }
             catch (Exception)
@@ -116,7 +114,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<Categoria> Delete(int id)
+        public async Task<ActionResult<Categoria>> Delete(int id)
         {
             try
             {
@@ -126,7 +124,7 @@ namespace APICatalogo.Controllers
                     return NotFound("Categoria não encontrada");
 
                 _context.Categorias.Remove(categoria);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return categoria;
             }
             catch (Exception)
