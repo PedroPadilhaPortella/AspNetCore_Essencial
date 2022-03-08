@@ -338,3 +338,122 @@ Information: 0 - ## 09:50:51 ##
 Information: 0 - ## ModelState: True ##
 Information: 0 - ## OnActionExecuted ##
 Information: 0 - ## 09:50:54 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:41:24 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:41:26 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:41:27 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:41:27 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:41:37 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:41:37 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:43:35 ##
+Information: 0 - ## 10:43:35 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:43:37 ##
+Information: 0 - ## 10:43:37 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:43:39 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:43:39 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:43:59 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:43:59 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:45:14 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:45:15 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:45:16 ##
+Information: 0 - ## 10:45:16 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:46:20 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:46:22 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:46:27 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:46:27 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:48:19 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:48:21 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:48:22 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:48:22 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:48:26 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:48:26 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:49:05 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:49:07 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:50:17 ##
+Information: 0 - ## 10:50:17 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:50:19 ##
+Information: 0 - ## 10:50:19 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:50:55 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 10:50:57 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:50:57 ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 10:50:57 ##

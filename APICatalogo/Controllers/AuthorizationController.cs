@@ -1,4 +1,5 @@
 ﻿using APICatalogo.DTO;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +16,7 @@ namespace APICatalogo.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
+    [EnableCors("AllowAPIRequest")]
     public class AuthorizationController : ControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;

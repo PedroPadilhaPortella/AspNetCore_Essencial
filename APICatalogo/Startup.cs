@@ -38,6 +38,11 @@ namespace APICatalogo
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // CORS
+            services.AddCors(options => 
+                options.AddPolicy("AllowAPIRequest", builder => 
+                    builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
+
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -107,6 +112,10 @@ namespace APICatalogo
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            //app.UseCors();
+            app.UseCors(options =>
+                options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {

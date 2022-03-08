@@ -5,6 +5,7 @@ using APICatalogo.Repository;
 using APICatalogo.Services.Filters;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,7 @@ namespace APICatalogo.Controllers
     //[Authorize(AuthenticationSchemes = "Bearer")]
     [ApiController]
     [Route("api/[Controller]")]
+    [EnableCors("AllowAPIRequest")]
     public class ProdutosController : Controller
     {
         //private readonly AppDbContext _context;
