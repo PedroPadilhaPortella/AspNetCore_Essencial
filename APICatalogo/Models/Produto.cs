@@ -19,6 +19,8 @@ namespace APICatalogo.Models
         [MaxLength(200)]
         public string Descricao { get; set; }
         [Required]
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(8, 2)")]
         public decimal Preco { get; set; }
         [Required]
         [MaxLength(200)]

@@ -4,19 +4,19 @@ using APICatalogo.Pagination;
 using APICatalogo.Repository;
 using APICatalogo.Services.Filters;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace APICatalogo.Controllers
 {
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     [ApiController]
     [Route("api/[Controller]")]
     public class ProdutosController : Controller
