@@ -1,7 +1,0 @@
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogoMinimal\obj\Debug\net6.0\APICatalogoMinimal.csproj.AssemblyReference.cache
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogoMinimal\obj\Debug\net6.0\APICatalogoMinimal.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogoMinimal\obj\Debug\net6.0\APICatalogoMinimal.AssemblyInfoInputs.cache
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogoMinimal\obj\Debug\net6.0\APICatalogoMinimal.AssemblyInfo.cs
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogoMinimal\obj\Debug\net6.0\APICatalogoMinimal.csproj.CoreCompileInputs.cache
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogoMinimal\obj\Debug\net6.0\APICatalogoMinimal.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogoMinimal\obj\Debug\net6.0\APICatalogoMinimal.MvcApplicationPartsAssemblyInfo.cache

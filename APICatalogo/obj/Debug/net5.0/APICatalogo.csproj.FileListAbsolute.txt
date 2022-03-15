@@ -54,3 +54,4 @@ C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\ref\APICatalogo.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.pdb
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.genruntimeconfig.cache
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.csproj.AssemblyReference.cache

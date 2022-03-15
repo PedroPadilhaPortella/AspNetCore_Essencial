@@ -51,18 +51,6 @@ namespace APICatalogo.Controllers
                 //var categorias = _uof.CategoriaRepository.GetAll().ToList();
 
                 var categorias = await _uof.CategoriaRepository.GetCategories(parameters);
-
-                var metadata = new
-                {
-                    categorias.TotalCount,
-                    categorias.PageSize,
-                    categorias.TotalPages,
-                    categorias.CurrentPage,
-                    categorias.HasNext,
-                    categorias.HasPrevious
-                };
-
-                Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
                 return _mapper.Map<List<CategoriaDTO>>(categorias);
             }
             catch (Exception)
