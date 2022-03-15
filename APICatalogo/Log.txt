@@ -457,3 +457,246 @@ Information: 0 - ## OnActionExecuted ##
 Information: 0 - ## 10:50:57 ##
 Information: 0 - ## OnActionExecuted ##
 Information: 0 - ## 10:50:57 ##
+Critical: 6 - Application startup exception
+Method 'ApplyAsync' in type 'Microsoft.AspNetCore.Mvc.Routing.ApiVersionMatcherPolicy' from assembly 'Microsoft.AspNetCore.Mvc.Versioning, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' does not have an implementation.
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 00:08:39 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 00:08:42 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 00:12:59 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 00:13:01 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 00:13:08 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 00:13:08 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 00:14:20 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 00:14:23 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 00:15:21 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 00:15:23 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 00:16:08 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 00:16:10 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 00:18:26 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 00:18:27 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 00:20:55 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 00:20:57 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:47:40 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:47:42 ##
+Error: 1 - An unhandled exception has occurred while executing the request.
+Error: 1 - An unhandled exception has occurred while executing the request.
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:50:31 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:50:33 ##
+Error: 1 - An unhandled exception has occurred while executing the request.
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:51:49 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:51:51 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:52:26 ##
+Information: 0 - ## ModelState: True ##
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:52:28 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:52:44 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:52:46 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:53:16 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:53:18 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:53:34 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:53:37 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:54:37 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:54:44 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:54:56 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:54:56 ##
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:56:29 ##
+Information: 0 - ## ModelState: True ##
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:56:31 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 12:57:02 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 12:57:04 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 13:26:01 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 13:26:04 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 21:22:59 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 21:23:02 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 23:28:13 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 23:28:13 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 23:28:18 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 23:28:18 ##
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 23:28:22 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 23:28:22 ##
+Information: 0 - -- GET /autor --
+Information: 0 - Pedro Henrique Padilha Portella da Cruz
+Information: 0 - ## OnActionExecuting ##
+Information: 0 - ## 23:29:07 ##
+Information: 0 - ## ModelState: True ##
+Information: 0 - ## OnActionExecuted ##
+Information: 0 - ## 23:29:07 ##
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo
+Error: 20102 - Failed executing DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+ORDER BY `p`.`Preco`
+Error: 10100 - An exception occurred while iterating over the results of a query for context type 'APICatalogo.Context.AppDbContext'.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'MySqlConnection'.
+   at MySql.Data.MySqlClient.MySqlConnection.VerifyNotDisposed() in /_/src/MySqlConnector/MySql.Data.MySqlClient/MySqlConnection.cs:line 794
+   at MySql.Data.MySqlClient.MySqlConnection.get_Session() in /_/src/MySqlConnector/MySql.Data.MySqlClient/MySqlConnection.cs:line 563
+   at MySqlConnector.Core.ICancellableCommandExtensions.ResetCommandTimeout(ICancellableCommand command) in /_/src/MySqlConnector/Core/ICancellableCommand.cs:line 42
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySql.Data.MySqlClient/MySqlCommand.cs:line 261
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySql.Data.MySqlClient/MySqlCommand.cs:line 257
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo

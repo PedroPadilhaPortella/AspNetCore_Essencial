@@ -17,10 +17,12 @@ using System.Threading.Tasks;
 
 namespace APICatalogo.Controllers
 {
-    //[Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [ApiController]
     [Route("api/[Controller]")]
     [EnableCors("AllowAPIRequest")]
+    [Produces("application/json")]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     public class ProdutosController : Controller
     {
         //private readonly AppDbContext _context;

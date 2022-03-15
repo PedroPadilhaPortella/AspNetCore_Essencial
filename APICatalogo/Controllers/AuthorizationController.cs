@@ -17,6 +17,7 @@ namespace APICatalogo.Controllers
     [Route("api/[Controller]")]
     [ApiController]
     [EnableCors("AllowAPIRequest")]
+    [Produces("application/json")]
     public class AuthorizationController : ControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -33,12 +34,21 @@ namespace APICatalogo.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Retorna um teste de acesso do AuthorizationController, com a data e hora atual
+        /// </summary>
+        /// <returns>String com a data atual</returns>
         [HttpGet]
         public ActionResult<string> Get()
         {
             return "AuthorizationController: " + DateTime.Now.ToLongDateString();
         }
 
+        /// <summary>
+        /// Registra um novo usuário com base no email, senha e senha de confirmação
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>OkObjectResult com token de acesso</returns>
         [HttpPost("register")]
         public async Task<ActionResult> Register([FromBody] UsuarioDTO model)
         {
@@ -63,6 +73,11 @@ namespace APICatalogo.Controllers
             return Ok(GenerateToken(model));
         }
 
+        /// <summary>
+        /// login de usuário com base no email, senha e senha de confirmação
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>OkObjectResult com token de acesso</returns>
         [HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] UsuarioDTO model)
         {

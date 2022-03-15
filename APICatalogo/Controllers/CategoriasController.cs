@@ -22,6 +22,8 @@ namespace APICatalogo.Controllers
     [Route("api/[Controller]")]
     [ApiController]
     [EnableCors("AllowAPIRequest")]
+    [Produces("application/json")]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     public class CategoriasController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -35,6 +37,11 @@ namespace APICatalogo.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Retorna todas as Categorias, podendo ser paginadas via queryString
+        /// </summary>
+        /// <param name="parameters">Informações de QueryString, PageNumber e PageSize</param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get([FromQuery] CategoriasParameters parameters)
         {
@@ -64,6 +71,11 @@ namespace APICatalogo.Controllers
             }
         }
 
+        /// <summary>
+        /// Retorna uma Categoria por Id
+        /// </summary>
+        /// <param name="id">Id da Categoria</param>
+        /// <returns></returns>
         [HttpGet("{id:int:min(1)}", Name = "ObterCategoria")]
         public async Task<ActionResult<Categoria>> GetById(int id)
         {
@@ -85,6 +97,11 @@ namespace APICatalogo.Controllers
             }
         }
 
+        /// <summary>
+        /// Salvar uma nova Categoria
+        /// </summary>
+        /// <param name="categoria">Categoria</param>
+        /// <returns>A Categoria Criada</returns>
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] Categoria categoria)
         {
@@ -100,6 +117,12 @@ namespace APICatalogo.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualizar de uma Categoria
+        /// </summary>
+        /// <param name="id">Id da Categoria Atualizada</param>
+        /// <param name="categoria">Categoria</param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] Categoria categoria)
         {
@@ -118,6 +141,11 @@ namespace APICatalogo.Controllers
             }
         }
 
+        /// <summary>
+        /// Excluir uma Categoria por Id
+        /// </summary>
+        /// <param name="id">Id da Categoria</param>
+        /// <returns>Categoria</returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<Categoria>> Delete(int id)
         {

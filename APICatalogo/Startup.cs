@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,12 +19,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Pomelo.EntityFrameworkCore.MySql.Storage;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace APICatalogo
 {
@@ -43,6 +42,7 @@ namespace APICatalogo
                 options.AddPolicy("AllowAPIRequest", builder => 
                     builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
 
+            // Configuração do Banco de Dados Mysql
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -51,15 +51,19 @@ namespace APICatalogo
             //    options.UseMySql(mySqlConnectionString,
             //        ServerVersion.AutoDetect(mySqlConnectionString)));
 
+            // Configuração do Identity
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
+            // Configuração dos Controllers 
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            // Injeção Unit of Work
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            // Injeção do Logging Filter
             services.AddScoped<ApiLoggingFilter>();
 
             // Registro do AutoMapper
@@ -85,8 +89,67 @@ namespace APICatalogo
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                 });
 
+            // Versionamento da API
+            services.AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.ReportApiVersions = true;
+                options.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
+            });
+
+            // Documentação com Swagger
             services.AddSwaggerGen(c =>
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "APICatalogo", Version = "v1" }));
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "APICatalogo",
+                    Description = "Catálogo de Produtos e Categorias",
+                    Version = "v1",
+                    TermsOfService = new Uri("https://github.com/PedroPadilhaPortella"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Pedro Padilha Portella",
+                        Email = "pedro.kadjin.sg@gmail.com",
+                        Url = new Uri("https://github.com/PedroPadilhaPortella")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Licença de Uso",
+                        Url = new Uri("https://github.com/PedroPadilhaPortella")
+                    }
+                });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+
+                // Para habilitar o uso do JwtToken no swagger
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JWT Authorization header using the Bearer scheme."
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                        },
+                        new string[] {}
+                    }
+                });
+            }) ;
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -95,7 +158,7 @@ namespace APICatalogo
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "APICatalogo v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "APICatalogo"));
             }
 
             app.ConfigureExceptionHandler();
@@ -114,8 +177,7 @@ namespace APICatalogo
             app.UseAuthorization();
 
             //app.UseCors();
-            app.UseCors(options =>
-                options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {

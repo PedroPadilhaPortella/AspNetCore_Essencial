@@ -7,12 +7,14 @@ C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\APICatalogo.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\ref\APICatalogo.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\APICatalogo.pdb
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\APICatalogo.xml
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
@@ -38,7 +40,6 @@ C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.csproj.AssemblyReference.cache
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.AssemblyInfoInputs.cache
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.AssemblyInfo.cs

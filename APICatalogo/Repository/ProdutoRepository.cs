@@ -27,9 +27,9 @@ namespace APICatalogo.Repository
             );
         }
 
-        public async Task<IEnumerable<Produto>> GetProductsByPrice()
+        public IQueryable<Produto> GetProductsByPrice()
         {
-            return await GetAll().OrderBy(p => p.Preco).ToListAsync();
+            return GetAll().OrderBy(p => p.Preco);
         }
     }
 }

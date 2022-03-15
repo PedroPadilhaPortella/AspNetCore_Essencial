@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APICatalogo</name>
+    </assembly>
+    <members>
+        <member name="M:APICatalogo.Controllers.AuthorizationController.Get">
+            <summary>
+            Retorna um teste de acesso do AuthorizationController, com a data e hora atual
+            </summary>
+            <returns>String com a data atual</returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.AuthorizationController.Register(APICatalogo.DTO.UsuarioDTO)">
+            <summary>
+            Registra um novo usuário com base no email, senha e senha de confirmação
+            </summary>
+            <param name="model"></param>
+            <returns>OkObjectResult com token de acesso</returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.AuthorizationController.Login(APICatalogo.DTO.UsuarioDTO)">
+            <summary>
+            login de usuário com base no email, senha e senha de confirmação
+            </summary>
+            <param name="model"></param>
+            <returns>OkObjectResult com token de acesso</returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.Get(APICatalogo.Pagination.CategoriasParameters)">
+            <summary>
+            Retorna todas as Categorias, podendo ser paginadas via queryString
+            </summary>
+            <param name="parameters">Informações de QueryString, PageNumber e PageSize</param>
+            <returns></returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.GetById(System.Int32)">
+            <summary>
+            Retorna uma Categoria por Id
+            </summary>
+            <param name="id">Id da Categoria</param>
+            <returns></returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.Post(APICatalogo.Models.Categoria)">
+            <summary>
+            Salvar uma nova Categoria
+            </summary>
+            <param name="categoria">Categoria</param>
+            <returns>A Categoria Criada</returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.Put(System.Int32,APICatalogo.Models.Categoria)">
+            <summary>
+            Atualizar de uma Categoria
+            </summary>
+            <param name="id">Id da Categoria Atualizada</param>
+            <param name="categoria">Categoria</param>
+            <returns></returns>
+        </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.Delete(System.Int32)">
+            <summary>
+            Excluir uma Categoria por Id
+            </summary>
+            <param name="id">Id da Categoria</param>
+            <returns>Categoria</returns>
+        </member>
+    </members>
+</doc>
