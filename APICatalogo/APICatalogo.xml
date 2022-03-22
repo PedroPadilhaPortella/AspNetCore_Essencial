@@ -60,5 +60,13 @@
             <param name="id">Id da Categoria</param>
             <returns>Categoria</returns>
         </member>
+        <member name="M:APICatalogo.Controllers.CategoriasController.GetPaginated(System.Int32,System.Int32)">
+            <summary>
+            Retorna as Categorias divididas em Páginas
+            </summary>
+            <param name="page">Página</param>
+            <param name="quantidade">Tamanho da Página</param>
+            <returns>Lista de CategoriasDTO</returns>
+        </member>
     </members>
 </doc>

@@ -153,5 +153,33 @@ namespace APICatalogo.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao remover Categoria");
             }
         }
+
+        /// <summary>
+        /// Retorna as Categorias divididas em Páginas
+        /// </summary>
+        /// <param name="page">Página</param>
+        /// <param name="quantidade">Tamanho da Página</param>
+        /// <returns>Lista de CategoriasDTO</returns>
+        [HttpGet("paginacao")]
+        public ActionResult<IEnumerable<CategoriaDTO>> GetPaginated(int page = 1, int quantidade = 5)
+        {
+            try
+            {
+                var categorias = _uof.CategoriaRepository.LocatePage<Categoria>(page, quantidade);
+
+                int totalRegistros = _uof.CategoriaRepository.GetTotalDeRegistros();
+                int totalPaginas = ((int)Math.Ceiling((double)totalRegistros / quantidade));
+
+                Response.Headers["X-Total-Regitros"] = totalRegistros.ToString();
+                Response.Headers["X-Total-Paginas"] = totalPaginas.ToString();
+
+
+                return _mapper.Map<List<CategoriaDTO>>(categorias);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Erro ao acessar dados do banco");
+            }
+        }
     }
 }
