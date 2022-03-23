@@ -23,6 +23,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Microsoft.AspNet.OData.Extensions;
+using APICatalogo.GraphQL;
 
 namespace APICatalogo
 {
@@ -187,12 +188,16 @@ namespace APICatalogo
             //});
 
             //app.UseCors();
+
+            //app.UseMiddleware<TestGraphQLMiddleware>();
+
             app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

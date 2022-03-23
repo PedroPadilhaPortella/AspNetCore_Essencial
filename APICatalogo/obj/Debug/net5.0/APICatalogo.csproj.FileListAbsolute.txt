@@ -55,3 +55,15 @@ C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.pdb
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.genruntimeconfig.cache
 C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\obj\Debug\net5.0\APICatalogo.csproj.AssemblyReference.cache
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\GraphQL.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\GraphQL-Parser.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.AspNetCore.OData.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.OData.Core.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.OData.Edm.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\Microsoft.Spatial.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\System.Reactive.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\System.Reactive.Core.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\System.Reactive.Linq.dll
+C:\Users\pedro\Downloads\Github\AspNetCore_Essencial\APICatalogo\bin\Debug\net5.0\System.Runtime.InteropServices.WindowsRuntime.dll
