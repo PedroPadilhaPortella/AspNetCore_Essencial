@@ -8,7 +8,6 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -23,6 +22,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Microsoft.AspNet.OData.Extensions;
 
 namespace APICatalogo
 {
@@ -149,7 +149,11 @@ namespace APICatalogo
                         new string[] {}
                     }
                 });
-            }) ;
+            });
+
+            //OData
+            //services.AddOData();
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -175,6 +179,12 @@ namespace APICatalogo
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            //app.UseMvc(options =>
+            //{
+            //    options.EnableDependencyInjection();
+            //    options.Expand().Select().OrderBy().Count().Filter();
+            //});
 
             //app.UseCors();
             app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
